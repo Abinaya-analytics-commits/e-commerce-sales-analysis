@@ -1,0 +1,7 @@
+select count(*) from orders_data;
+select sum(subtotal_usd) as total_amount_usd from orders_data;
+select category,sum(subtotal_usd) as revenue from orders_data group by category order by revenue DESC LIMIT 5;
+select year,month,count(*) as total_orders from orders_data group by year,month order by year,month;
+select product_name,sum(quantity) as total_sold from orders_data group by product_name order by total_sold DESC limit 5;
+select avg(subtotal_usd) as avg_order_value_usd from orders_data;
+select year,month,sum(subtotal_usd) as revenue from orders_data group by year,month order by year,month;
